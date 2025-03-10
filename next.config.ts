@@ -9,7 +9,8 @@ const nextConfig = {
     ],
   },
   experimental:{
-    ppr:"incremental"
+    ppr:"incremental",
+    after:true,
   },
   devIndicators:{
     appIsrStatus:true,
