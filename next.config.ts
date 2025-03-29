@@ -1,6 +1,9 @@
+import { withSentryConfig } from "@sentry/nextjs";
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    dangerouslyAllowSVG:true,
+    dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -8,16 +11,22 @@ const nextConfig = {
       },
     ],
   },
-  experimental:{
-    ppr:"incremental",
-    after:true,
+  experimental: {
+    ppr: "incremental",
+    after: true,
   },
-  devIndicators:{
-    appIsrStatus:true,
-    buildActivity:true,
-    buildActivityPosition:"bottom-right",
-
-  }
+  devIndicators: {
+    appIsrStatus: true,
+    buildActivity: true,
+    buildActivityPosition: "bottom-right",
+  },
 };
 
-module.exports = nextConfig;
+export default withSentryConfig(nextConfig, {
+  org: "pranav-shankar",
+  project: "javascript-nextjs",
+  silent: !process.env.CI,
+  widenClientFileUpload: true,
+  disableLogger: true,
+  automaticVercelMonitors: true,
+});
