@@ -6,7 +6,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   eslint:{
-    ignoreDuringBuild:true,
+    ignoreDuringBuildErrors: true,
   },
   images: {
     dangerouslyAllowSVG: true,
