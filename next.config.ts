@@ -2,11 +2,8 @@ import { withSentryConfig } from "@sentry/nextjs";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript:{
+  typescript: {
     ignoreBuildErrors: true,
-  },
-  eslint:{
-    ignoreDuringBuildErrors: true,
   },
   images: {
     dangerouslyAllowSVG: true,
@@ -18,8 +15,7 @@ const nextConfig = {
     ],
   },
   experimental: {
-    ppr: "incremental",
-    after: true,
+    ppr: true, 
   },
   devIndicators: {
     appIsrStatus: true,
