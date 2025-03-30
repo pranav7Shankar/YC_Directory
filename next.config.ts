@@ -1,3 +1,4 @@
+import path from "path";
 import { withSentryConfig } from "@sentry/nextjs";
 
 /** @type {import('next').NextConfig} */
@@ -15,12 +16,16 @@ const nextConfig = {
     ],
   },
   experimental: {
-    ppr: true, 
+    ppr: true,
   },
   devIndicators: {
-    appIsrStatus: true,
+    // These are now deprecated – safe to remove, but kept for backward compatibility
     buildActivity: true,
     buildActivityPosition: "bottom-right",
+  },
+  webpack(config) {
+    config.resolve.alias["@"] = path.resolve(__dirname);
+    return config;
   },
 };
 
