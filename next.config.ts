@@ -16,6 +16,7 @@ const nextConfig = {
     ],
   },
   experimental: {
+    
     ppr: true,
   },
   devIndicators: {
