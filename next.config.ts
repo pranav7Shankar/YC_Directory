@@ -19,9 +19,7 @@ const nextConfig = {
     ppr: true,
   },
   devIndicators: {
-    // These are now deprecated – safe to remove, but kept for backward compatibility
-    buildActivity: true,
-    buildActivityPosition: "bottom-right",
+    position: "bottom-right",
   },
   webpack(config) {
     config.resolve.alias["@"] = path.resolve(__dirname);
